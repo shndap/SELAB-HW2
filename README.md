@@ -103,11 +103,12 @@
 
 ## اجرای پروژه
 
-برای اجرای هر نسخه می‌توان از `javac` و `java` استفاده کرد. نمونه:
+برای اجرای هر نسخه باید آن را جداگانه در یک پوشه خروجی مستقل کامپایل کرد، چون هر دو نسخه یک کلاس `Main` در package پیش‌فرض دارند. نمونه:
 
 ```bash
-javac -d out $(find Step-01-without-OOD/src -name "*.java")
-java -cp out Main
+mkdir -p out-step1 out-step2
+javac -d out-step1 $(find Step-01-without-OOD/src -name "*.java")
+java -cp out-step1 Main
 ```
 
-برای نسخه‌ی دوم نیز کافی است مسیر `Step-01-without-OOD` را با `Step-02-with-OOD` جایگزین کنید.
+برای نسخه‌ی دوم نیز کافی است مسیر `Step-01-without-OOD` را با `Step-02-with-OOD` و `out-step1` را با `out-step2` جایگزین کنید.
