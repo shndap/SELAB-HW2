@@ -38,8 +38,15 @@ public class SmokeTest {
             System.exit(1);
         }
     }
+    
+    private static void runScenario(String name, PaymentMethods payment, Notifier notifier, String city,
+                                    double roomPrice, int nights, boolean expectDiscount, String paymentLabel) 
+    {
+        runScenario_(name, payment, notifier, city, roomPrice, nights, expectDiscount, paymentLabel);
+        System.out.print("\n" + "-".repeat(50) + "\n\n");
+    }
 
-    private static void runScenario(String name, PaymentProcessor paymentProcessor, MessageSender messageSender, String city,
+    private static void runScenario_(String name, PaymentMethods payment, Notifier notifier, String city,
                                     double roomPrice, int nights, boolean expectDiscount, String paymentLabel) {
         System.out.println("[ACTION] makeReservation(payment=" + paymentProcessor.getClass().getSimpleName()
                 + ", notifier=" + messageSender.getClass().getSimpleName()
