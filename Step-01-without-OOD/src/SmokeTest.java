@@ -64,6 +64,7 @@ public class SmokeTest {
         }
 
         if (ok) {
+            System.out.print(output);
             passed++;
             System.out.println("[PASS] " + name);
         } else {
