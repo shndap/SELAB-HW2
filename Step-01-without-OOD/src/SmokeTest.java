@@ -35,6 +35,8 @@ public class SmokeTest {
 
     private static void runScenario(String name, PaymentMethods payment, Notifier notifier, String city,
                                     double roomPrice, int nights, boolean expectDiscount, String paymentLabel) {
+        System.out.println("[ACTION] makeReservation(payment=" + payment + ", notifier=" + notifier
+                + ", city=" + city + ", nights=" + nights + ")");
         String output = capture(() -> {
             Customer customer = new Customer("Ali", "ali@example.com", "09124483765", city);
             Room room = new LuxuryRoom("2" + passed, roomPrice);
